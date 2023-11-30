@@ -1,13 +1,18 @@
 <script>
+    import { hasVat } from './store'
     export let title = "";
     export let description = "";
     export let price = 0;
+    let hasVatValue;
+    hasVat.subscribe(value => {
+        hasVatValue = value;
+    })
 </script>
 
 <div class="card">
     <h2>{title}</h2>
     <p>{description}</p>
-    <p>${price}</p>
+    <p>${hasVatValue ? price * 1.2 : price}</p>
 </div>
 
 <style>

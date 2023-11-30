@@ -2,6 +2,7 @@
   import svelteLogo from './assets/svelte.svg'
   import viteLogo from '/vite.svg'
   import Counter from './lib/Counter.svelte'
+  import Card from './lib/Card.svelte'
 </script>
 
 <main>
@@ -18,6 +19,11 @@
   <div class="card">
     <Counter />
   </div>
+  <Card
+    title="Product 1"
+    description="This is a nice product."
+    price={19.99}
+  />
 
   <p>
     Check out <a href="https://github.com/sveltejs/kit#readme" target="_blank" rel="noreferrer">SvelteKit</a>, the official Svelte app framework powered by Vite!

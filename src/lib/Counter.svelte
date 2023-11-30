@@ -5,6 +5,12 @@
   }
 </script>
 
-<button on:click={increment}>
+<button class="button" on:click={increment}>
   count is {count}
 </button>
+
+<style>
+  .button {
+      border-radius: 100%;
+  }
+</style>

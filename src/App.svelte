@@ -3,6 +3,12 @@
   import viteLogo from '/vite.svg'
   import Counter from './lib/Counter.svelte'
   import Card from './lib/Card.svelte'
+
+  const products = [
+    { title: "Product 1", description: "This is product 1.", price: 10 },
+    { title: "Product 2", description: "This is product 2.", price: 20 },
+    { title: "Product 3", description: "This is product 3.", price: 30 },
+  ]
 </script>
 
 <main>
@@ -19,11 +25,13 @@
   <div class="card">
     <Counter />
   </div>
-  <Card
-    title="Product 1"
-    description="This is a nice product."
-    price={19.99}
-  />
+  {#each products as product}
+    <Card
+      title={product.title}
+      description={product.description}
+      price={product.price}
+    />
+  {/each}
 
   <p>
     Check out <a href="https://github.com/sveltejs/kit#readme" target="_blank" rel="noreferrer">SvelteKit</a>, the official Svelte app framework powered by Vite!
